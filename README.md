@@ -182,3 +182,4 @@ chmod 700 .ssh/
 cat >>.ssh/authorized_keys <<EOT
 command="/bin/echo 2102",no-user-rc,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa AAAAB3N<skipped> root@bar.com
 EOT
+
