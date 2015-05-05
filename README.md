@@ -15,7 +15,8 @@ while true; do
   sleep 5
 done
 
-# Server sshd
+# Server fedora 21 sshd_config
+
 #	$OpenBSD: sshd_config,v 1.93 2014/01/10 05:59:19 djm Exp $
 
 # This is the sshd server system-wide configuration file.  See
@@ -169,3 +170,15 @@ Subsystem	sftp	/usr/libexec/openssh/sftp-server
 #	AllowTcpForwarding no
 #	PermitTTY no
 #	ForceCommand cvs server
+
+# comehome@localhost user setup:
+useradd -r -m -k /dev/null comehome
+cd /home/comehome/
+mkdir .ssh
+chown comehome:comehome .ssh/
+chmod 700 .ssh/
+
+##comehome@localhost authorized_keys
+cat >>.ssh/authorized_keys <<EOT
+command="/bin/echo 2102",no-user-rc,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa AAAAB3N<skipped> root@bar.com
+EOT
