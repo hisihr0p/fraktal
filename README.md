@@ -1,7 +1,11 @@
 1.
+
+On the Client:
+
 #!/bin/sh
 
-# Fraktal core installation
+Fraktal core installation
+=========================
 
 SSHCMD="ssh -Tq -o ServerAliveInterval=5 \
     -o UserKnownHostsFile=/dev/null \
