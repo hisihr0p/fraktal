@@ -1,0 +1,22 @@
+#ovpn client setup 
+
+client
+keepalive 10 60
+explicit-exit-notify 2
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+mute-replay-warnings
+comp-lzo
+verb 6
+dev tun
+proto udp
+
+ifconfig 10.7.1.250 10.7.1.1
+remote $WAN 1195
+;remote $WAN-2 1196
+
+ca /home/x/.openvpn/ca.crt
+cert /home/x/.openvpn/$user.crt
+key /home/x/.openvpn/$user.key
