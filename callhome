@@ -12,3 +12,7 @@ while true; do
     fi
   sleep 5
 done
+
+##Server authorization
+cat .ssh/authorized_keys 
+command="/bin/echo 10001",no-user-rc,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa AAAAB3...E+8J x@somehost
