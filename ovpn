@@ -5,9 +5,9 @@ tls-client
 dev tun
 proto udp
 
-ifconfig 10.7.1.250 10.7.1.1
-remote 195.228.45.188 1195             # VPN server IP : PORT
-port 1195
+ifconfig $DHCP $IPSERVER
+remote $IPADDRESS $PORT      # VPN server IP : PORT
+port $PORT
 
 nobind
 resolv-retry infinite
