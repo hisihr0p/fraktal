@@ -1,22 +1,24 @@
 #ovpn client setup 
 
-client
-keepalive 10 60
-explicit-exit-notify 2
-resolv-retry infinite
-nobind
-persist-key
-persist-tun
-mute-replay-warnings
-comp-lzo
-verb 6
+tls-client
+
 dev tun
 proto udp
 
 ifconfig 10.7.1.250 10.7.1.1
-remote $WAN 1195
-;remote $WAN-2 1196
+remote 195.228.45.188 1195             # VPN server IP : PORT
+port 1195
+
+nobind
+resolv-retry infinite
+keepalive 10 60
+
+comp-lzo
+persist-key
+persist-tun
 
 ca /home/x/.openvpn/ca.crt
-cert /home/x/.openvpn/$user.crt
-key /home/x/.openvpn/$user.key
+cert /home/x/.openvpn/x.crt
+key /home/x/.openvpn/x.key
+
+verb 6
